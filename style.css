@@ -1,0 +1,307 @@
+:root {
+    --bg-color: rgb(0, 20, 37);
+    --bg-color-light: rgb(155, 205, 248);
+    --btn-bg-color-light: #000;
+    --btn-bg-color-dark: #fff;
+    --btn-color-dark: #000;
+    --btn-color-light: #ffffff;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Prompt", sans-serif;
+}
+body {
+    padding: 0 10px;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+body.lightmode {
+    background-color: var(--bg-color-light);
+}
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.bg-anim-el {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+.bg-anim-el div {
+    position: relative;
+    width: 2px;
+    height: 5px;
+    background-color: rgb(37, 96, 148);
+    opacity: 40%;
+    z-index: 0;
+    margin: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 1px rgb(50, 127, 194);
+    animation: bgAnimation 15s linear infinite;
+    animation-duration: calc(80s / var(--i));
+}
+.bg-anim-el div:nth-child(even) {
+    background: rgb(253, 136, 58);
+    box-shadow: 0 0 5px 1px rgb(255, 160, 97);
+}
+@keyframes bgAnimation {
+    0% {
+        transform: translateY(-10vh) scale(0.8);
+    }
+    100% {
+        transform: translateY(100vh) scale(0.8);
+    }
+}
+header {
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 70px;
+        div.chng-theme {
+            width: calc(28px * 2);
+            height: 28px;
+            border: none;
+            border-radius: 20px;
+            background-color: var(--btn-bg-color-dark);
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
+        div.chng-theme.lightmode {
+            background-color: var(--btn-bg-color-light);
+        }
+        div.chng-theme .btn-point {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: var(--btn-color-dark);
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            box-shadow: 0 0 5px 1px #fff, inset 0 0 2px #fff;
+            transition: transform .3s ease;
+        }
+        .lightmode .btn-point {
+            transform: translateX(28px);
+        }
+        div.chng-theme .btn-point .btn-icon-cont {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn__icon {
+            font-size: 15px;
+            color: #fff;
+        }
+        div.chng-theme .btn-point.lightmode {
+            background-color: var(--btn-color-light);
+        }
+    }
+    .btn__icon.anim {
+        animation: btnIcon .3s;
+    }
+    .top-bar h1 {
+        color: #fff;
+        font-size: 30pt;
+        text-align: left;
+        position: relative;
+        z-index: 1;
+        margin-left: 0;
+        --h1-width: auto;
+        width: var(--h1-width);
+    }
+    button {
+        position: relative;
+    }
+    nav {
+        padding: 0 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background-color: rgb(0, 30, 56);
+        box-shadow: 0 -5px 20px 1px #fff;
+        z-index: 2;
+        overflow: hidden;
+        ul {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            gap: 20px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            font-size: 24px;
+        }
+        #close-icon {
+            font-size: 24px;
+            font-weight: 900;
+            color: #fff;
+            text-align: right;
+            padding: 10px 0;
+            cursor: pointer;
+            transition: 0.1s ease-out;
+        }
+        #close-icon:hover {
+            color: #5e5e5e;
+        }
+    }
+    nav .menu li a {
+        text-decoration: none;
+        color: #fff;
+        transition: 0.1s ease-out;
+    }
+    nav .menu li a:hover {
+        color: #5e5e5e;
+    }
+    #menu-icon {
+        position: absolute;
+        top: 11px;
+        right: 8px;
+        z-index: 1;
+        filter: invert(1);
+        cursor: pointer;
+        img {
+            width: 40px;
+        }
+    }
+    nav.open {
+        width: 70vw;
+        animation: menuIn 0.4s 1;
+        display: block;
+    }
+    nav {
+        width: 0;
+        animation: menuOut 0.4s 1;
+        display: none;
+    }
+}
+.write-anim {
+    font-size: 20pt;
+    color: #fff;
+    font-weight: 100;
+    min-width: 280px;
+    max-width: 100%;
+}
+.write-anim span {
+    position: relative;
+}
+.write-anim span::before {
+    content: "Bartłomiej Dąbrowski";
+    color: rgb(253, 136, 58);
+    animation: words 10s infinite;
+}
+.write-anim span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-color: var(--bg-color);
+    border-left: 2px solid rgb(253, 136, 58);
+    right: -8px;
+    animation: cursor 0.8s infinite, typing 10s steps(20) infinite;
+}
+.write-anim span.lightmode::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-color: var(--bg-color-light);
+    border-left: 2px solid rgb(253, 136, 58);
+    right: -8px;
+    animation: cursor-light 0.8s infinite, typing 10s steps(20) infinite;
+}
+@keyframes menuIn {
+    from {
+        width: 0vw;
+    }
+    to {
+        width: 70vw;
+    }
+}
+@keyframes menuOut {
+    0% {
+        width: 70vw;
+    }
+    100% {
+        width: 0;
+    }
+}
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--bg-color);
+    }
+}
+@keyframes cursor-light {
+    to {
+        border-left: 2px solid var(--bg-color-light);
+    }
+}
+@keyframes words {
+    0%,
+    25% {
+        content: "Bartłomiej Dąbrowski";
+    }
+    26%,
+    50% {
+        content: "Web Designer";
+    }
+    51%,
+    75% {
+        content: "Web Developer";
+    }
+    76%,
+    100% {
+        content: "Gamer";
+    }
+}
+@keyframes typing {
+    10%,
+    20%,
+    35%,
+    45%,
+    60%,
+    70%,
+    85%,
+    95% {
+        width: 0;
+    }
+    5%,
+    25%,
+    30%,
+    50%,
+    55%,
+    75%,
+    80%,
+    98% {
+        width: calc(100% + 8px);
+    }
+}
+@keyframes btnIcon {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.about-section {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    background-color: rgb(3, 75, 138, 40%);
+    height: calc(auto + 10px);
+    border-radius: 7pt;
+    padding: 20px;
+    h2 {
+        color: #fff;
+        font-weight: 300;
+    }
+}
