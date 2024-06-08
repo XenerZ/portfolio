@@ -5,57 +5,71 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="/style.css" />
+        <link rel="stylesheet" href="/loading-style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
     </head>
     <body>
+        <div class="onload">
+            <div class="loading">
+                <span id="outside"></span>
+                <span id="inside"></span>
+                <span id="center"></span>
+            </div>
+        </div>
         <div class="bg">
             <div class="bg-anim-el">
-                <div style="--i:11"></div>
-                <div style="--i:12"></div>
-                <div style="--i:24"></div>
-                <div style="--i:10"></div>
-                <div style="--i:14"></div>
-                <div style="--i:23"></div>
-                <div style="--i:18"></div>
-                <div style="--i:16"></div>
-                <div style="--i:19"></div>
-                <div style="--i:20"></div>
-                <div style="--i:22"></div>
-                <div style="--i:25"></div>
-                <div style="--i:18"></div>
-                <div style="--i:21"></div>
-                <div style="--i:15"></div>
-                <div style="--i:13"></div>
-                <div style="--i:26"></div>
-                <div style="--i:17"></div>
-                <div style="--i:13"></div>
-                <div style="--i:28"></div>
-                <div style="--i:11"></div>
-                <div style="--i:12"></div>
-                <div style="--i:24"></div>
-                <div style="--i:10"></div>
-                <div style="--i:14"></div>
-                <div style="--i:23"></div>
-                <div style="--i:18"></div>
-                <div style="--i:16"></div>
-                <div style="--i:19"></div>
-                <div style="--i:20"></div>
-                <div style="--i:22"></div>
-                <div style="--i:25"></div>
-                <div style="--i:18"></div>
-                <div style="--i:21"></div>
-                <div style="--i:15"></div>
-                <div style="--i:13"></div>
-                <div style="--i:26"></div>
-                <div style="--i:17"></div>
-                <div style="--i:13"></div>
-                <div style="--i:28"></div>
+                <div style="--i: 11"></div>
+                <div style="--i: 12"></div>
+                <div style="--i: 24"></div>
+                <div style="--i: 10"></div>
+                <div style="--i: 14"></div>
+                <div style="--i: 23"></div>
+                <div style="--i: 18"></div>
+                <div style="--i: 16"></div>
+                <div style="--i: 19"></div>
+                <div style="--i: 20"></div>
+                <div style="--i: 22"></div>
+                <div style="--i: 25"></div>
+                <div style="--i: 18"></div>
+                <div style="--i: 21"></div>
+                <div style="--i: 15"></div>
+                <div style="--i: 13"></div>
+                <div style="--i: 26"></div>
+                <div style="--i: 17"></div>
+                <div style="--i: 13"></div>
+                <div style="--i: 28"></div>
+                <div style="--i: 11"></div>
+                <div style="--i: 12"></div>
+                <div style="--i: 24"></div>
+                <div style="--i: 10"></div>
+                <div style="--i: 14"></div>
+                <div style="--i: 23"></div>
+                <div style="--i: 18"></div>
+                <div style="--i: 16"></div>
+                <div style="--i: 19"></div>
+                <div style="--i: 20"></div>
+                <div style="--i: 22"></div>
+                <div style="--i: 25"></div>
+                <div style="--i: 18"></div>
+                <div style="--i: 21"></div>
+                <div style="--i: 15"></div>
+                <div style="--i: 13"></div>
+                <div style="--i: 26"></div>
+                <div style="--i: 17"></div>
+                <div style="--i: 13"></div>
+                <div style="--i: 28"></div>
             </div>
         </div>
         <header class="header">
@@ -70,23 +84,101 @@
                 </div>
             </div>
             <nav>
-                <div id="close-icon">&#10005</div>
+                <div id="close-icon">&#10005;</div>
                 <ul class="menu">
                     <li><a href="#about">About</a></li>
                     <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>ss
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <div id="menu-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png" alt=""></div>
-            <div class="write-anim">
-                I am a <span></span>
+            <div id="menu-icon">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"
+                    alt=""
+                />
             </div>
+            <div class="write-anim">I am a <span></span></div>
         </header>
-        <section class="about-section" id="about">
-            <div class="head-section">
+        <section class="section" id="about">
+            <div class="first-el">
                 <h2>Let me introduce myself</h2>
+                <p>
+                    My name is Bartek and I am pretending to be a front-end
+                    developer.<br />
+                    I am a 23 years old student on 2nd year IT in Businnes and I
+                    am working right now in E-Commerce as Online Shop
+                    Administrator.
+                    <br />
+                    Apart from that my passion is automotive industry,
+                    especially I am a huge enthusiast of USA musclecars.<br />
+                    I'm also into PC technology like graphic cards, cpu's etc.
+                    Of course I am a huge fan of games.
+                </p>
+                <p>
+                    Now when you know who am I let's
+                    <strong>enjoy into the rest of my site!</strong>
+                </p>
+            </div>
+            <div class="second-el">
+                <img src="/foto.jpg" alt="Me" />
+            </div>
+        </section>
+        <div class="section-title" id="portfolio">
+            <h2>My projects</h2>
+        </div>
+        <section class="section projects">
+            <div class="project">
+                <div class="first-el">
+                    <a href="">
+                        <img src="/foto.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="second-el">
+                    <h2>Login page prototype</h2>
+                </div>
+            </div>
+            <div class="project">
+                <div class="first-el">
+                    <a href="">
+                        <img src="/foto.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="second-el">
+                    <h2>Login page prototype</h2>
+                </div>
+            </div>
+            <div class="project">
+                <div class="first-el">
+                    <a href="">
+                        <img src="/foto.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="second-el">
+                    <h2>Login page prototype</h2>
+                </div>
+            </div>
+            <div class="project">
+                <div class="first-el">
+                    <a href="">
+                        <img src="/foto.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="second-el">
+                    <h2>Login page prototype</h2>
+                </div>
+            </div>
+            <div class="project">
+                <div class="first-el">
+                    <a href="">
+                        <img src="/foto.jpg" alt="" />
+                    </a>
+                </div>
+                <div class="second-el">
+                    <h2>Login page prototype</h2>
+                </div>
             </div>
         </section>
         <script src="/script.js"></script>
+        <script src="/loading.js"></script>
     </body>
 </html>
