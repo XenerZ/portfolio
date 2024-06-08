@@ -24,6 +24,7 @@ body {
     padding: 0 10px;
     background-color: var(--bg-color);
     width: 100%;
+    overflow-x: hidden;
 }
 body.lightmode {
     background-color: var(--bg-color-light);
