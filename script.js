@@ -15,6 +15,7 @@ var themeBtn = document.querySelector(".chng-theme");
 var body = document.querySelector("body");
 var spacer = document.querySelector(".section-title");
 var foot = document.querySelector("footer");
+var menuDesk = document.querySelector("#desk");
 var btnPoint = document.querySelector(".btn-point");
 var btnIcon = document.querySelector(".btn__icon");
 var writeAnim = document.querySelector(".write-anim span")
@@ -36,6 +37,7 @@ function load() {
         body.classList.toggle("lightmode");
         spacer.classList.toggle("lightmode");
         foot.classList.toggle("lightmode");
+        menuDesk.classList.toggle("lightmode");
         btnPoint.classList.toggle("lightmode");
         themeBtn.classList.toggle("lightmode");
         btnIcon.classList.add("fa-moon");
@@ -51,6 +53,7 @@ themeBtn.addEventListener("click", () => {
     body.classList.toggle("lightmode");
     spacer.classList.toggle("lightmode");
     foot.classList.toggle("lightmode");
+    menuDesk.classList.toggle("lightmode");
     btnPoint.classList.toggle("lightmode");
     btnIcon.classList.add("anim");
     themeBtn.classList.toggle("lightmode");

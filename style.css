@@ -227,6 +227,11 @@ header {
             color: aqua;
         }
     }
+    nav#desk.lightmode {
+        a:hover {
+            color: #5e5e5e;
+        }
+    }
 }
 @keyframes menuIn {
     from {
