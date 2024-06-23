@@ -9,6 +9,89 @@
         <link rel="stylesheet" href="loading-style.css" />
     </head>
     <body>
+        <script>
+            function login() {
+                let emailLog = document.getElementById("email-login");
+                let passLog = document.getElementById("password-login");
+                let emailLogV = document.getElementById("email-login").value;
+                let passLogV = document.getElementById("password-login").value;
+                let info = document.getElementById("info");
+
+                if (emailLogV && passLogV) {
+                    info.innerHTML = `Witaj ${emailLogV}`;
+                    emailLog.style.border = "none";
+                    passLog.style.border = "none";
+                } else if (!emailLogV && passLogV) {
+                    info.innerHTML = "Podaj email";
+                    emailLog.style.border = "2px solid red";
+                } else if (emailLogV && !passLogV) {
+                    info.innerHTML = "Podaj hasło";
+                    passLog.style.border = "2px solid red";
+                } else {
+                    info.innerHTML = "Podaj email i hasło";
+                    emailLog.style.border = "2px solid red";
+                    passLog.style.border = "2px solid red";
+                }
+            }
+            function register() {
+                let name = document.getElementById("name");
+                let surname = document.getElementById("surname");
+                let emailReg = document.getElementById("email-register");
+                let passReg = document.getElementById("password-register");
+                let nameV = document.getElementById("name").value;
+                let surnameV = document.getElementById("surname").value;
+                let emailRegV = document.getElementById("email-register").value;
+                let passRegV = document.getElementById("password-register").value;
+                let info = document.getElementById("info");
+
+                if(nameV && surnameV && emailRegV && passRegV) {
+                    info.innerHTML = `Witaj ${nameV} ${surnameV}!`;
+                } else if(!nameV && !surnameV && !emailRegV && !passRegV) {
+                    info.innerHTML = "Uzupełnij brakujące dane.";
+                    name.style.border = "2px solid red";
+                    surname.style.border = "2px solid red";
+                    emailReg.style.border = "2px solid red";
+                    passReg.style.border = "2px solid red";
+                } else if (!surnameV && !emailRegV && !passRegV) {
+                    info.innerHTML = "Uzupełnij brakujące dane.";
+                    surname.style.border = "2px solid red";
+                    emailReg.style.border = "2px solid red";
+                    passReg.style.border = "2px solid red";
+                } else if (!emailRegV && !passRegV) {
+                    info.innerHTML = "Uzupełnij brakujące dane.";
+                    emailReg.style.border = "2px solid red";
+                    passReg.style.border = "2px solid red";
+                } else if (!passRegV) {
+                    info.innerHTML = "Uzupełnij brakujące dane.";
+                    passReg.style.border = "2px solid red";
+                } else if (!nameV && !surnameV && !emailRegV) {
+                    info.innerHTML = "Uzupełnij brakujące dane.";
+                    name.style.border = "2px solid red";
+                    surname.style.border = "2px solid red";
+                    emailReg.style.border = "2px solid red";
+                } else if (!nameV && !surnameV) {
+                    info.innerHTML = "Uzupełnij brakujące dane.";
+                    name.style.border = "2px solid red";
+                    surname.style.border = "2px solid red";
+                } else if (!nameV) {
+                    info.innerHTML = "Uzupełnij brakujące dane.";
+                    name.style.border = "2px solid red";
+                } else if (!surnameV && !emailRegV) {
+                    info.innerHTML = "Uzupełnij brakujące dane.";
+                    surname.style.border = "2px solid red";
+                    emailReg.style.border = "2px solid red";
+                } else if (!nameV && !emailRegV) {
+                    info.innerHTML = "Uzupełnij brakujące dane.";
+                    name.style.border = "2px solid red";
+                    emailReg.style.border = "2px solid red";
+                } else if (!nameV && !passRegV) {
+                    info.innerHTML = "Uzupełnij brakujące dane.";
+                    name.style.border = "2px solid red";
+                    passReg.style.border = "2px solid red";
+                }
+            }
+        </script>
+
         <div class="onload">
             <div class="loading">
                 <span id="outside"></span>
@@ -63,6 +146,84 @@
         <div class="click">
             <a href="./index.html">HOME</a>
         </div>
+
+        <div class="box">
+            <div class="log-reg">
+                <div class="login">Login</div>
+                <div class="register">Register</div>
+            </div>
+            <div class="login-box">
+                <div class="input">
+                    <input
+                        type="email"
+                        name="email"
+                        id="email-login"
+                        placeholder="e-mail"
+                    />
+                </div>
+                <div class="input">
+                    <input
+                        type="password"
+                        name="password"
+                        id="password-login"
+                        placeholder="password"
+                    />
+                </div>
+                <div class="input">
+                    <input
+                        id="btn-login"
+                        type="button"
+                        value="Login"
+                        onclick="login()"
+                    />
+                </div>
+            </div>
+            <div class="register-box">
+                <div class="input">
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="name"
+                    />
+                </div>
+                <div class="input">
+                    <input
+                        type="text"
+                        name="surname"
+                        id="surname"
+                        placeholder="surname"
+                    />
+                </div>
+                <div class="input">
+                    <input
+                        type="email"
+                        name="email"
+                        id="email-register"
+                        placeholder="e-mail"
+                    />
+                </div>
+                <div class="input">
+                    <input
+                        type="password"
+                        name="password"
+                        id="password-register"
+                        placeholder="password"
+                    />
+                </div>
+                <div class="input">
+                    <input
+                        id="btn-register"
+                        type="button"
+                        value="Login"
+                        onclick="register()"
+                    />
+                </div>
+            </div>
+            <p id="info"></p>
+        </div>
+
         <script src="loading.js"></script>
+        <script src="login.js"></script>
     </body>
 </html>

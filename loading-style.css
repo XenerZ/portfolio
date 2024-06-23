@@ -81,20 +81,3 @@
         transform: scale(130%);
     }
 }
-
-.click {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 200px;
-    margin: auto;
-    background-color: black;
-    a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 30pt;
-    }
-}

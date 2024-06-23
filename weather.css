@@ -1,0 +1,53 @@
+:root {
+    --bg-color: rgb(0, 20, 37);
+    --bg-color-light: rgb(155, 205, 248);
+    --btn-bg-color-light: #000;
+    --btn-bg-color-dark: #fff;
+    --btn-color-dark: #000;
+    --btn-color-light: #ffffff;
+    --shadow-black: rgb(0, 0, 0);
+    --shadow-blue: rgb(0, 112, 209);
+    --section-bg-odd-opacity: rgba(3, 75, 138, 40%);
+    --section-spacer-bg: rgba(3, 75, 138, 80%);
+    --padding-section: 20px;
+    --border-radius-inner: 7pt;
+    --border-radius-box: calc(7pt + 20px);
+}
+
+.weather-box{
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    width: 400px;
+    height: 340px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 10px;
+    background-color: var(--section-bg-odd-opacity);
+    text-align: center;
+    border-radius: var(--border-radius-box);
+
+    h2 {
+        color: #fff;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 22pt;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    #icon-box{
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+}

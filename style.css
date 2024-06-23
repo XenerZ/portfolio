@@ -24,6 +24,7 @@ body {
     padding: 0 10px;
     background-color: var(--bg-color);
     width: 100%;
+    height: 100%;
     overflow-x: hidden;
 }
 body.lightmode {
@@ -33,7 +34,7 @@ body.lightmode {
 .bg {
     position: absolute;
     width: 99%;
-    height: 100vh;
+    height: 130vh;
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -53,7 +54,7 @@ body.lightmode {
     border-radius: 50%;
     box-shadow: 0 0 5px 1px rgb(50, 127, 194);
     animation: bgAnimation 15s linear infinite;
-    animation-duration: calc(80s / var(--i));
+    animation-duration: calc(120s / var(--i));
 }
 .bg-anim-el div:nth-child(even) {
     background: rgb(253, 136, 58);
@@ -64,7 +65,7 @@ body.lightmode {
         transform: translateY(-10vh) scale(0.8);
     }
     100% {
-        transform: translateY(100vh) scale(0.8);
+        transform: translateY(130vh) scale(0.8);
     }
 }
 /* Header with navigation */
@@ -133,8 +134,8 @@ header {
         margin-left: 0;
         width: var(--h1-width);
     }
-    /* navigation */
-    nav {
+    /* navigation RWD */
+    nav#respons {
         padding: 0 10px;
         position: absolute;
         top: 0;
@@ -168,12 +169,12 @@ header {
             color: #5e5e5e;
         }
     }
-    nav .menu li a {
+    nav#respons .menu li a {
         text-decoration: none;
         color: #fff;
         transition: 0.1s ease-out;
     }
-    nav .menu li a:hover {
+    nav#respons .menu li a:hover {
         color: #5e5e5e;
     }
     #menu-icon {
@@ -187,15 +188,44 @@ header {
             width: 40px;
         }
     }
-    nav.open {
+    nav#respons.open {
         width: 70vw;
         animation: menuIn 0.4s 1;
         display: block;
     }
-    nav {
+    nav#respons {
         width: 0;
         animation: menuOut 0.4s 1;
         display: none;
+    }
+    nav#desk {
+        position: absolute;
+        top: 10px;
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        color: #fff;
+        width: 100%;
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            gap: 20px;
+            font-size: 22pt;
+        }
+        li {
+            transition: transform .2s ease-out;
+        }
+        li:hover {
+            transform: scale(1.1);
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        a:hover {
+            color: aqua;
+        }
     }
 }
 @keyframes menuIn {
@@ -318,6 +348,9 @@ header {
         display: none;
     }
 }
+.section-title.lightmode {
+    background-color: #5e99cc;
+}
 .section-title {
     position: relative;
     left: -10px;
@@ -356,7 +389,6 @@ header {
     .project {
         margin-top: 15px;
         margin-bottom: 15px;
-        border-bottom: 2px solid var(--section-spacer-bg);
         .first-el {
             display: flex;
             width: 100%;
@@ -392,8 +424,54 @@ header {
 .section.project {
     border-bottom: 1px solid var(--section-spacer-bg);
 }
+
+/* footer with contact */
+footer.lightmode {
+    background-color: #5e99cc;
+}
+footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -10px;
+    width: 100vw;
+    height: 150px;
+    padding: 20px 40px;
+    background-color: var(--section-spacer-bg);
+
+    .contact {
+        color: #fff;
+        font-size: 15pt;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            transition: all .2s ease-out;
+        }
+        a:hover {
+            color: #5e5e5e;
+        }
+    }
+}
 /* RWD */
-@media screen and (min-device-width: 768px) {
+@media screen and (min-width: 768px) {
+    /* nav */
+    .top-bar {
+        margin-right: 10px!important;
+    }
+    nav#desk {
+        display: flex!important;
+    }
+    nav#respons {
+        display: none;
+    }
+    #menu-icon {
+        display: none;
+    }
     /* sections RWD */
     .section .first-el {
         width: 50vw;

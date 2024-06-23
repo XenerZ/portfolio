@@ -1,6 +1,6 @@
 window.addEventListener("load", (event) => {
     /* menu - RWD */
-    var menu = document.querySelector("nav");
+    var menu = document.querySelector("#respons");
     var menuIcon = document.querySelector("header #menu-icon");
     var closeIcon = document.querySelector("header nav #close-icon");
 
@@ -10,16 +10,11 @@ window.addEventListener("load", (event) => {
     closeIcon.addEventListener("click", () => {
         menu.classList.toggle("open");
     });
-
-    /* Theme button */
-    // var themeBtn = document.querySelector("#chng-theme button");
-    // themeBtn.addEventListener("click", () => {
-    //     console.log("Theme changed");
-
-    // })
 });
 var themeBtn = document.querySelector(".chng-theme");
 var body = document.querySelector("body");
+var spacer = document.querySelector(".section-title");
+var foot = document.querySelector("footer");
 var btnPoint = document.querySelector(".btn-point");
 var btnIcon = document.querySelector(".btn__icon");
 var writeAnim = document.querySelector(".write-anim span")
@@ -39,6 +34,8 @@ function load() {
         btnIcon.classList.add("fa-sun");
     } else if (lightmode == "true") {
         body.classList.toggle("lightmode");
+        spacer.classList.toggle("lightmode");
+        foot.classList.toggle("lightmode");
         btnPoint.classList.toggle("lightmode");
         themeBtn.classList.toggle("lightmode");
         btnIcon.classList.add("fa-moon");
@@ -52,6 +49,8 @@ load();
 
 themeBtn.addEventListener("click", () => {
     body.classList.toggle("lightmode");
+    spacer.classList.toggle("lightmode");
+    foot.classList.toggle("lightmode");
     btnPoint.classList.toggle("lightmode");
     btnIcon.classList.add("anim");
     themeBtn.classList.toggle("lightmode");
@@ -74,4 +73,13 @@ themeBtn.addEventListener("click", () => {
     setTimeout( () => {
         btnIcon.classList.remove("anim");
     }, 500 );
+});
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
